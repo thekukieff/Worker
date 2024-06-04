@@ -1,0 +1,6 @@
+﻿  FileName.cpp
+F:\Игорь\C++\ZZZZZZZZZZZ\FileName.cpp(18,19): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+F:\Игорь\C++\ZZZZZZZZZZZ\FileName.cpp(32,13): warning C4305: =: усечение из "double" в "float"
+F:\Игорь\C++\ZZZZZZZZZZZ\FileName.cpp(35,13): warning C4305: =: усечение из "double" в "float"
+F:\Игорь\C++\ZZZZZZZZZZZ\FileName.cpp(38,13): warning C4305: =: усечение из "double" в "float"
+  ZZZZZZZZZZZ.vcxproj -> F:\Игорь\C++\ZZZZZZZZZZZ\x64\Debug\ZZZZZZZZZZZ.exe
