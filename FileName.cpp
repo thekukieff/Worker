@@ -4,10 +4,10 @@
 
 class Worker {
 
+
+
+
 public:
-	std::string name;
-	int stage;//стаж
-	int salary, hours;
 
 
 	int Salary() {
@@ -15,31 +15,31 @@ public:
 
 
 		salary = salary * hours;
-		salary = salary + salary * premya;
+		salary = salary + (salary * premya);
 		return salary;
 
 	}
 
 
 	float Premya() {
-		
+
 		float premya;
-	
+
 		if (stage == 0) {
 			premya = 0;
 		}
-		else if (stage > 5) {//более 5
+		else if (stage > 5) {//Р±РѕР»РµРµ 5
 			premya = 0.15;
 		}
-		else if (stage > 2) {//до пяти
+		else if (stage > 2) {//РґРѕ РїСЏС‚Рё
 			premya = 0.08;
 		}
 		else {
-			premya = 0.05;//до 3 лет
+			premya = 0.05;//РґРѕ 3 Р»РµС‚
 		}
 		return premya;
-		Salary();
 		
+
 	}
 
 
@@ -47,38 +47,42 @@ public:
 
 
 	void Fill_worker() {
-		std::cout << "Введите ФИО сотрудника: ";
-		std::getline(std::cin,name);
+		std::cout << "Р’РІРµРґРёС‚Рµ Р¤РРћ СЃРѕС‚СЂСѓРґРЅРёРєР°: ";
+		std::getline(std::cin, name);
 
-		std::cout << "\nВведите стаж работника: ";
+		std::cout << "\nР’РІРµРґРёС‚Рµ СЃС‚Р°Р¶ СЂР°Р±РѕС‚РЅРёРєР°: ";
 		std::cin >> stage;
 
-		std::cout << "\nВведите зп работника за час: ";
+		std::cout << "\nР’РІРµРґРёС‚Рµ Р·Рї СЂР°Р±РѕС‚РЅРёРєР° Р·Р° С‡Р°СЃ: ";
 		std::cin >> salary;
 
-		std::cout << "\nВведите количество отработанных часов за месяц: ";
+		std::cout << "\nР’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РѕС‚СЂР°Р±РѕС‚Р°РЅРЅС‹С… С‡Р°СЃРѕРІ Р·Р° РјРµСЃСЏС†: ";
 		std::cin >> hours;
 		std::cin.ignore(32000, '\n');
-		Premya();
-		Cout_info();
+
+		Print_info();
 
 	}
 
 
 
 
-	void Cout_info() {
-		
+	void Print_info() {
+		int salary = Salary();
+
 		system("cls");
-		std::cout << "Работник: " << name;
-		std::cout << "\n\nСтаж: " << stage<<" лет";
-		std::cout << "\n\nКоличество отработанных часов: " << hours;
-		std::cout << "\n\nПремия: " << Premya() * 100 << "%";
-		std::cout << "\n\nЗарплата: " << Salary() << " рублей в месяц";
+		std::cout << "Р Р°Р±РѕС‚РЅРёРє: " << name;
+		std::cout << "\n\nРЎС‚Р°Р¶: " << stage << " Р»РµС‚";
+		std::cout << "\n\nРљРѕР»РёС‡РµСЃС‚РІРѕ РѕС‚СЂР°Р±РѕС‚Р°РЅРЅС‹С… С‡Р°СЃРѕРІ: " << hours;
+		std::cout << "\n\nРџСЂРµРјРёСЏ: " << Premya() * 100 << "%";
+		std::cout << "\n\nР—Р°СЂРїР»Р°С‚Р°: " << salary << " СЂСѓР±Р»РµР№ РІ РјРµСЃСЏС†";
 		std::cout << "\n";
 	}
 
-
+private:
+	std::string name;
+	int stage;//СЃС‚Р°Р¶
+	int salary, hours;
 };
 
 
@@ -86,8 +90,14 @@ public:
 int main() {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
+
 	Worker one;
 	one.Fill_worker();
+
+
+
+	return 0;
+}
 
 
 
